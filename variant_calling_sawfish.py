@@ -2,8 +2,12 @@ import os
 import argparse
 import subprocess
 import shutil
+from pathlib import Path
 
-SEX_INFO_DIR = "./input_data/sawfish_info"
+script_path = Path(__file__).resolve()
+script_dir = script_path.parent
+
+SEX_INFO_DIR = script_dir / "sawfish_info"
 
 def get_expected_cn_path(sample_name: str) -> str:
     '''
